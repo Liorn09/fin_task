@@ -11,7 +11,7 @@ class AssetRequest(BaseModel):
 
 
 app = FastAPI()
-@app.get("/top-assets")
+@app.post("/top-assets")
 def get_top_assets(details: AssetRequest):
     currency = details.currency
     per_page = details.per_page

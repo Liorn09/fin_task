@@ -70,8 +70,8 @@ The API is exposed through FastAPI and can be accessed locally via uvicorn.
 
 ⚙️ Setup Instructions
 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/crypto-recommender.git
-cd crypto-recommender
+git clone https://github.com/Liorn09/fin_task.git
+cd fin_task
 
 2️⃣ Create a Virtual Environment (optional but recommended)
 python -m venv venv
@@ -93,12 +93,15 @@ By default, the API will run on:
 http://127.0.0.1:8000
 
 🔄 API Endpoint
-GET /recommend
+POST /top-assets
 
-Fetches the latest crypto market data and returns top-ranked recommendations.
+Fetches the latest crypto market data and returns top-ranked 10 recommendations.
 
 Example Request
-GET http://127.0.0.1:8000/recommend
+POST http://127.0.0.1:8000/top-assets
+Payload: {currency: str # the currency used
+    per_page: int # the number of results per page
+    page: int # number of pages; use 1 if not provided}
 
 Example Response
 [
