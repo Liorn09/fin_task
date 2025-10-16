@@ -1,9 +1,10 @@
 from fastapi import FastAPI
-import requests
 from pydantic import BaseModel
 from data_fetcher import fetch_market_data
 from model import rank_assets
 
+
+# define the payload structure here
 class AssetRequest(BaseModel):
     currency: str = "usd"
     per_page: int = 100
@@ -11,6 +12,8 @@ class AssetRequest(BaseModel):
 
 
 app = FastAPI()
+
+
 @app.post("/top-assets")
 def get_top_assets(details: AssetRequest):
     currency = details.currency
